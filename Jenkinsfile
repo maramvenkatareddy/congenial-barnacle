@@ -12,12 +12,9 @@ pipeline {
         }
         stage ('build') {
             when {
-                 {
                     branch 'main'
                     environment(name: "url", value: "https://github.com/maramvenkatareddy/spring-petclinic.git")
-
-                }
-            }
+                  }
             steps {
                 sh 'mvn package'
             }
